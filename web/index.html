@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <title>Go Runner — TinyGo → WASM</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/editor/editor.main.css" />
+  <style>
+    :root { --bg:#1e1e1e; --panel:#0e0e0e; --accent:#007acc; color-scheme: dark; }
+    html,body { height:100%; margin:0; font-family: Inter, Arial, sans-serif; background:var(--bg); color:#ddd; }
+    #container { display:flex; height:100vh; gap:0; }
+    #left { flex:1; display:flex; flex-direction:column; }
+    #editor { flex:1; height:100%; }
+    #toolbar { padding:10px; background:#151515; display:flex; gap:8px; align-items:center; border-bottom:1px solid #222; }
+    button { background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+    button:disabled { opacity:0.5; cursor:not-allowed; }
+    #right { width:42%; display:flex; flex-direction:column; border-left:1px solid #222; background:var(--panel); }
+    #outputHeader { padding:10px; border-bottom:1px solid #222; }
+    #output { flex:1; padding:12px; font-family: monospace; white-space: pre-wrap; overflow:auto; color:#e6e6e6; }
+    #status { margin-left:auto; color:#aaa; font-size:0.9em; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="left">
+      <div id="toolbar">
+        <button id="formatBtn">Format</button>
+        <button id="runBtn">Run</button>
+        <select id="targetSelect" title="WASM target">
+          <option value="wasm">wasm</option>
+          <option value="wasi">wasi</option>
+        </select>
+        <div id="status">Ready</div>
+      </div>
+      <div id="editor"></div>
+    </div>
+
+    <div id="right">
+      <div id="outputHeader">Output</div>
+      <div id="output">Program output will appear here.</div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
