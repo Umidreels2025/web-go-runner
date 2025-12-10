@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Go Runner — Professional Editor</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+</head>
+<body class="dark-mode">
+<div class="container">
+    <header>
+        <h1>Go Online Runner</h1>
+        <div class="header-buttons">
+            <button id="runBtn">Run ▶</button>
+            <button id="toggleTheme">🌙 / ☀️</button>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="editor-section">
+            <div id="editor">package main
+import "fmt"
+
+func main() {
+    fmt.Println("Hello from Go Runner!")
+}</div>
+        </div>
+        <div class="output-section">
+            <h2>Output</h2>
+            <pre id="output"></pre>
+            <h2>Error</h2>
+            <pre id="error"></pre>
+        </div>
+    </main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
