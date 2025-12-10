@@ -1,0 +1,191 @@
+/* ==========================
+   Global Styles
+========================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dark / Light Mode */
+body.dark-mode {
+    background: #1e1e2f;
+    color: #ffffff;
+}
+
+body.light-mode {
+    background: #f4f4f4;
+    color: #000000;
+}
+
+/* ==========================
+   Container
+========================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* ==========================
+   Header
+========================== */
+header {
+    background: #2b2b3b;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #3c3c5c;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #00bfff;
+}
+
+.header-buttons button {
+    margin-left: 10px;
+    padding: 8px 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Run button */
+#runBtn {
+    background: #007acc;
+    color: #fff;
+}
+
+#runBtn:hover {
+    background: #00bfff;
+    transform: scale(1.05);
+}
+
+/* Dark/Light toggle */
+#toggleTheme {
+    background: #555;
+    color: #fff;
+}
+
+#toggleTheme:hover {
+    background: #888;
+}
+
+/* ==========================
+   Main Content
+========================== */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 10px;
+}
+
+/* Editor & Output sections */
+.editor-section,
+.output-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================
+   Editor
+========================== */
+#editor {
+    border-radius: 6px;
+    border: 1px solid #3c3c5c;
+    min-height: 300px;
+    max-height: 600px;
+    height: auto;
+    overflow: auto;
+    padding: 10px;
+    font-family: monospace;
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+/* ==========================
+   Output Section
+========================== */
+.output-section h2 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.output-section pre {
+    border-radius: 6px;
+    padding: 12px;
+    min-height: 100px;
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+    background-color: #2b2b3b;
+    border: 1px solid #3c3c5c;
+    color: #00ffcc;
+    font-family: monospace;
+}
+
+/* ==========================
+   Responsive Design
+========================== */
+
+/* Tablets and small desktops */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    #editor {
+        min-height: 250px;
+        max-height: 400px;
+    }
+
+    .output-section pre {
+        max-height: 250px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    #runBtn, #toggleTheme {
+        font-size: 0.95rem;
+        padding: 6px 14px;
+    }
+
+    #editor {
+        min-height: 200px;
+        max-height: 350px;
+    }
+
+    .output-section pre {
+        max-height: 200px;
+    }
+}
+
+/* Large screens / TV */
+@media (min-width: 1920px) {
+    #editor {
+        font-size: 1.2rem;
+        max-height: 700px;
+    }
+
+    .output-section pre {
+        font-size: 1.1rem;
+        max-height: 500px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+  }
